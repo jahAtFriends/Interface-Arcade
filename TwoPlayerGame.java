@@ -8,7 +8,7 @@
 *
 */
 
-package org.friendsbalt.cs.adv.InterfaceArcade;
+//package org.friendsbalt.cs.adv.InterfaceArcade;
 
 
 /**
@@ -74,7 +74,7 @@ public interface TwoPlayerGame {
     *
     * @throws UnsupportedOperationException if this method is not
     * overriden by the implementing class.
-    * @deprecated Replaced by a call to {@code playerMove(Player.ONE) }
+    * @deprecated Replaced by a call to {@code playerMove(TwoPlayerGame.Player.ONE) }
     */
     @Deprecated
     default void playerOneMove() throws UnsupportedOperationException { 
@@ -86,7 +86,7 @@ public interface TwoPlayerGame {
     *
     * @throws UnsupportedOperationException if this method is not
     * overriden by the implementing class.
-    * @deprecated Replaced by a call to {@code playerMove(Player.TWO) }
+    * @deprecated Replaced by a call to {@code playerMove(TwoPlayerGame.Player.TWO) }
     */
     @Deprecated
     default void playerTwoMove() throws UnsupportedOperationException { 
