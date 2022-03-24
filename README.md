@@ -99,7 +99,7 @@ different sounds depending on the weight of the cow.
 
 This is discrepancy is an issue since those utilizing the `Cow` class expect the `speak()`
 method to behave a certain way according to the interface when in reality it behaves in a
-different way. THis could lead to all sorts of unexpected erors. The power of interfaces
+different way. This could lead to all sorts of unexpected erors. The power of interfaces
 lies in this documentation since it enables programmers and programs to interact with each
 other without the need to understand _all_ of the inner workings of each other's code.
   
