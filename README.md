@@ -46,17 +46,86 @@ _exactly_ as specified.
 
 Below is are two attempts at implementing the `Talkative` interface. One is correct, the
 other is not.
+
+```java
+public class Cow implements Talkative {
+  private weight;
   
-[javadocs for this assignment](https://friendsbaltcs.github.io/docs/ACS/InterfaceArcade/).
+  public Cow(String name) {
+    this.name = name;
+  }
+  
+  @Override
+  public void speak() {
+    if (this.weight <= 100) {
+      System.out.println("moo.");
+    else if (this.weight > 100) {
+      System.out.println("MOOOOOOOO!!!!!");
+    }
+  }
+}
+
+```
+
+```java
+public class Cat implements Talkative {
+  private String weight;
+  
+  public Cat(String name) {
+    this.name = name;
+  }
+  
+  @Override
+  public void speak() {
+    System.out.println("Meow");
+  }
+  
+  public void speakByWeight() {
+    if (this.weight <= 20) {
+      System.out.println("meow.");
+    else {
+      System.out.println("zzzzzzz");
+    }
+  }
+}
+```
+
+Which one of these two classes correctly implements the interface? For one, both of the
+classes override the `speak()` method specified in the interface, so the code _will_
+compile and run without any errors. However, notice that only _the second class_ obeys
+the specifications in interfaces documentation which clearly indicates that the `speak()`
+method must be consistent for all instances of the class. The `Cow` class outputs
+different sounds depending on the weight of the cow.
+
+This is discrepancy is an issue since those utilizing the `Cow` class expect the `speak()`
+method to behave a certain way according to the interface when in reality it behaves in a
+different way. THis could lead to all sorts of unexpected erors. The power of interfaces
+lies in this documentation since it enables programmers and programs to interact with each
+other without the need to understand _all_ of the inner workings of each other's code.
+  
+
 
 ## Project
 
-Your two-player game should follow all of the specifications perfectly as your game will
-_not_ be permitted to include method calls to run your game as a stand-alone program.
-Rather, the methods will be called by a "user" or "third-party developer" (me) attempting
-to create an arcade of all of your games. Everyone's program will be tested with the
-_identical_ tester method (which you are not permitted to see ahead of time).
+In this project, you will demonstrate your ability to implement an interface by creating a
+game which follows the model of the `TwoPlayerGame` interface. You can find the interface in
+this repository, but more importantly you should read the 
+[javadocs for this assignment](https://friendsbaltcs.github.io/docs/ACS/InterfaceArcade/).
 
-Still, it is a good idea to test your code yourself. Your project will be run for the first
-time in front of the whole class, after which I will loudly announce your grade on the spot.
-Good luck!
+Note a couple of salient elements of a two-player game:
+- There are two players
+- The players play the game on a shared surface (like a board)
+- The players take turns
+- When one player completes a single turn, it becomes the other's turn.
+- The game can be played start to finish using only the methods in the interface (plus the constructor)
+
+Now, in some sense, boxing is a game played by two people, but it is _not_ a `TwoPlayerGame`
+since there really aren't any "turns" involved (unless it's a really bad match). You may
+write the code for any game you'd like _as long as it obeys the specifications_.
+
+You may (and should) write a `main()` method which calls the other methods that you write, but I will not use
+this to play your game. I have already written code (which you will never get to see) that
+can play any arbitrary `TwoPlayerGame()` that follows the specifications of the interface. So, __Follow them
+very carefullly!__ At the end of the project, I will run your game using my code in front
+of the whole class. If you did everything correctly, there will be no problems, otherwise
+it will crash. Good luck!
