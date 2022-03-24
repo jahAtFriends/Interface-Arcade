@@ -1,8 +1,36 @@
 # Interface Arcade
 
-In this project, you will model the design flow of implementing an interface.
-Namely, you will implement the `TwoPlayerGame` interface by creating a
-two-player game that follows the documentation as listed in the 
+## Overview of Interfaces
+Recently, you have been studying interfaces in class. Interfaces enable us to specify the
+_kinds_ of methods that a given class without specifying how those methods work. Hence,
+for example, the `Comparable` interface specifies that classes which implement it will
+all have a `compareTo(some-object)` which allows you to compare "this" object to another
+returning a negative number indicating "less than," zero for "equal to," and a postive
+number for "greater than."
+
+Here is another example. Consider the `Talkative` interface (which I made up just now).
+
+```java
+/* 
+ * Specifies that the instances of the implementing class has the faculty
+ * of "speech." Speech is defined for the purposes of this interface as
+ * as making a certain noise proper to the class and consistent accross
+ * all members of the class. Hence, all cows should "moo" and all cats
+ * should "meow," although subclasses of either of these may make their
+ * own proper noise.
+ */
+public interface Talkative {
+  /*
+  * Causes an instance of a class to speak. Speaking may be achieved by
+  * simply printing a line of text to the command line using System.out
+  * or by some advanced method of playing a sound through system audio.
+  * Either way, all instances of a class should make the same sound
+  * without variation.
+  */
+  public void speak();
+}
+```
+  
 [javadocs for this assignment](https://friendsbaltcs.github.io/docs/ACS/InterfaceArcade/).
 
 ## Project
