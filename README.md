@@ -110,7 +110,7 @@ other without the need to understand _all_ of the inner workings of each other's
 In this project, you will demonstrate your ability to implement an interface by creating a
 game which follows the model of the `TwoPlayerGame` interface. You can find the interface in
 this repository, but more importantly you should read the 
-[javadocs for this assignment](https://friendsbaltcs.github.io/docs/ACS/InterfaceArcade/).
+[javadocs for this assignment](https://friendsbaltcs.github.io/docs/Intro/InterfaceArcade/TwoPlayerGame.html).
 
 Note a couple of salient elements of a two-player game:
 - There are two players
