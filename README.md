@@ -2,10 +2,10 @@
 
 ## Overview of Interfaces
 Recently, you have been studying interfaces in class. Interfaces enable us to specify the
-_kinds_ of methods that a given class without specifying how those methods work. Hence,
+_kinds_ of methods that a given class has without specifying how those methods work. Hence,
 for example, the `Comparable` interface specifies that classes which implement it will
-all have a `compareTo(some-object)` which allows you to compare "this" object to another
-returning a negative number indicating "less than," zero for "equal to," and a postive
+all have a `compareTo(some-object)` method which allows you to compare "this" object to another
+returning a negative number indicating "less than," zero for "equal to," or a postive
 number for "greater than."
 
 Here is another example. Consider the `Talkative` interface (which I made up just now).
@@ -30,6 +30,22 @@ public interface Talkative {
   public void speak();
 }
 ```
+
+Notice that in this interface, there is only one method, but there is a _ton_ of
+documentation. Why is that? Since the interface doesn't provide a method body
+for the `speak()` method (in fact in place of brackets, the method declaration ends
+in a semicolon), we need more information about what such a method would _do_.
+
+All of that documentation is important because, after the code is written, it can be
+used by anyone, and, unless the programmer wants to maintain a hotline where he can
+be reached to explain his code, there needs to be a clear explanation about how his or
+her code is expected to work. Interfaces allow us to do this in a uniform way as we will
+know that, as long as the programmers did their job correctly, _any_ class which
+implements the `Talkative` interface is going to have a `speak()` method that behaves
+_exactly_ as specified.
+
+Below is are two attempts at implementing the `Talkative` interface. One is correct, the
+other is not.
   
 [javadocs for this assignment](https://friendsbaltcs.github.io/docs/ACS/InterfaceArcade/).
 
